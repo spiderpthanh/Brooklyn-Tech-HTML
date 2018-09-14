@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title></title>
+	<style></style>
 	<script>
 		function initialize()
 		{
@@ -14,56 +15,65 @@
 		function alertOne()
 		{
 			alert("One");
+			alertZero();
 		}
 		function alertTwo()
 		{
 			alert("Two");
+			alertOne();
 		}
 		function alertThree()
 		{
 			alert("Three");
+			alertTwo();
 		}
 		function alertFour()
 		{
 			alert("Four");
+			alertThree();
 		}
 		function alertFive()
 		{
 			alert("Five");
+			alertFour();
 		}
 		function alertSix()
 		{
 			alert("Six");
+			alertFive();
 		}
 		function alertSeven()
 		{
 			alert("Seven");
+			alertSix();
 		}
 		function alertEight()
 		{
 			alert("Eight");
+			alertSeven();
 		}
 		function alertNine()
 		{
 			alert("Nine");
+			alertEight();
 		}
 		function alertTen()
 		{
 			alert("Ten");
+			alertNine();
 		}
 	</script>
 </head>
-<body onload="initialize();">
+<body>
 	<button onclick = "alertZero();">Click Me!</button>
-	<button onclick="alertOne();">1</button>
-	<button onclick="alertTwo();">2</button>
-	<button onclick="alertThree();">3</button>
+	<button onclick="alertOne(); ;">1</button>
+	<button onclick="alertTwo(); ; ;">2</button>
+	<button onclick="alertThree()">3</button>
 	<button onclick="alertFour();">4</button>
-	<button onclick="alertFive();">5</button>
+	<button onclick="alertFive();">5</button> 
 	<button onclick="alertSix();">6</button>
 	<button onclick="alertSeven();">7</button>
-	<button onclick="alertEight();">8</button>
+	<button onclick="alertEight()">8</button>
 	<button onclick="alertNine();">9</button>
 	<button onclick="alertTen();">10</button>
-</body>
 </html>

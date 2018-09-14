@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style></style>
+	<script>
+		function initialize()
+		{
+			num1 = 8;
+			num2 = 2;
+		}
+		function addNumbers()
+		{
+			var result = num1 + num2;
+			var msg = num1 + " + " + num2 + " = " + result;
+			alert(msg);
+		}
+		function subtractNumbers()
+		{
+			var result = num1 - num2;
+			var msg = num1 + " - " + num2 + " = " + result;
+			alert(msg);
+		}
+		function multiplyNumbers()
+		{
+			var result = num1 * num2;
+			var msg = num1 + " x " + num2 + " = " + result;
+			alert(msg);
+		}
+		function divideNumbers()
+		{
+			var result = num1 / num2;
+			var msg = num1 + " / " + num2 + " = " + result;
+			alert(msg);
+		}
+	</script>
+</head>
+<body onload = "initialize();">
+	<button onclick="addNumbers();">Add the two Numbers</button>
+	<button onclick="subtractNumbers();">Subtract the two Numbers</button>
+	<button onclick="multiplyNumbers();">Multiply the two Numbers</button>
+	<button onclick="divideNumbers();">Divide the two Numbers</button>
+</body>
+</html>
