@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style></style>
+	<script>
+		function initialize()
+		{
+			outputDiv = document.getElementById("countdown");
+		}
+		function alertZero()
+		{
+			outputDiv.innerHTML = "0";
+		}
+		function alertOne()
+		{
+			outputDiv.innerHTML = "1";
+			setTimeout(alertZero, 1000);
+		}
+		function alertTwo()
+		{
+			alert("Two");
+			setTimeout(alertOne, 1000);
+		}
+		function alertThree()
+		{
+			alert("Three");
+			setTimeout(alertTwo, 1000);
+		}
+		function alertFour()
+		{
+			alert("Four");
+			setTimeout(alertThree, 1000);
+		}
+		function alertFive()
+		{
+			alert("Five");
+			alertFour();
+		}
+		function alertSix()
+		{
+			alert("Six");
+			alertFive();
+		}
+		function alertSeven()
+		{
+			alert("Seven");
+			alertSix();
+		}
+		function alertEight()
+		{
+			alert("Eight");
+			alertSeven();
+		}
+		function alertNine()
+		{
+			alert("Nine");
+			alertEight();
+		}
+		function alertTen()
+		{
+			alert("Ten");
+			alertNine();
+		}
+	</script>
+</head>
+<body onload="initialize();">
+	<div id="countdown">Press a button to start the countdown!</div>
+	<button onclick = "alertZero();">0</button>
+	<button onclick="alertOne();">1</button>
+	<button onclick="alertTwo();">2</button>
+	<button onclick="alertThree()">3</button>
+	<button onclick="alertFour();">4</button>
+	<button onclick="alertFive();">5</button> 
+	<button onclick="alertSix();">6</button>
+	<button onclick="alertSeven();">7</button>
+	<button onclick="alertEight()">8</button>
+	<button onclick="alertNine();">9</button>
+	<button onclick="alertTen();">10</button>
+</html>
