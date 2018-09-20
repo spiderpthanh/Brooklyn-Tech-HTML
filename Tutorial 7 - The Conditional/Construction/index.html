@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script>
+		function initialize()
+		{
+			counter = 0;
+			counterOutput = document.getElementbyId("counterout");
+		}
+		function counterUp()
+		{
+			counter = counter + 1;
+			if (counter > 10)
+				counter = 10;
+			display();
+		}
+		function counterDown()
+		{
+			counter = counter - 1;
+			if (counter < 10)
+				counter = 10;
+			display();
+		}
+		function display()
+		{
+			counterOutput.innerHTML = counter;
+		}
+	</script>
+</head>
+<body onload="initialize();">
+	Counter: <span id="counterout">0</span>
+	<button onclick="counterUp();">Up</button>
+	<button onclick="counterDown();">Down</button>
+</body>
+</html>
