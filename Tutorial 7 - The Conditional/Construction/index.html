@@ -6,25 +6,43 @@
 		function initialize()
 		{
 			counter = 0;
-			counterOutput = document.getElementbyId("counterout");
+			counterOutput = document.getElementById("counterout");
+			negativesToggle = document.getElementById("displaytoggle");
+			negatives = true;
 		}
 		function counterUp()
 		{
 			counter = counter + 1;
-			if (counter > 10)
+			if (counter > 10){
 				counter = 10;
+			}
 			display();
 		}
 		function counterDown()
 		{
 			counter = counter - 1;
-			if (counter < 10)
-				counter = 10;
 			display();
 		}
 		function display()
 		{
 			counterOutput.innerHTML = counter;
+		}
+		function togglenum()
+		{
+			if (negatives == true){
+				if (counter < 0){
+				counter = 0;
+				// negativesToggle.innerHTML = "Negatives: On";
+				// negatives = false;
+				}
+			// } else {
+				// if (negatives = false){
+			// negativesToggle.innerHTML = "Negatives: Off";
+				// 	negatives = true;
+				// 	console.log("test");
+				// }
+			}
+			// 	display();
 		}
 	</script>
 </head>
@@ -32,5 +50,6 @@
 	Counter: <span id="counterout">0</span>
 	<button onclick="counterUp();">Up</button>
 	<button onclick="counterDown();">Down</button>
+	<button id="displaytoggle" onclick="togglenum();">Negatives: On</button>
 </body>
 </html>
