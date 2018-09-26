@@ -21,6 +21,11 @@
 		function counterDown()
 		{
 			counter = counter - 1;
+			if (negatives == false){
+				if (counter < 0){
+					counter = 0;
+				}
+			}
 			display();
 		}
 		function display()
@@ -31,18 +36,17 @@
 		{
 			if (negatives == true){
 				if (counter < 0){
-				counter = 0;
-				// negativesToggle.innerHTML = "Negatives: On";
-				// negatives = false;
+					counter = 0;
 				}
-			// } else {
-				// if (negatives = false){
-			// negativesToggle.innerHTML = "Negatives: Off";
-				// 	negatives = true;
-				// 	console.log("test");
-				// }
+				negatives = false;
+				negativesToggle.innerHTML = "Negatives: Off";
+			} else {
+				if (negatives == false){
+					negativesToggle.innerHTML = "Negatives: On";
+					negatives = true;
+				}
 			}
-			// 	display();
+				display();
 		}
 	</script>
 </head>
