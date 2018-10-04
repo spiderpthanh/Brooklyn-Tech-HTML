@@ -5,7 +5,7 @@
 	<script src="java/java.js"></script>
 	<title>Robot Builder</title>
 </head>
-<body>
+<body onload="initialize();">
 	<span id="power-counter">
 		Power Level: <span id="power-level">0</span>
 		<button onclick="powercounterUp();">Up</button>
@@ -21,5 +21,9 @@
 		<button onclick="integritycounterUp();">Up</button>
 		<button onclick="integritycounterDown();">Down</button>
 	</span>
+	<label class="switch">
+ 		<input type="checkbox">
+ 		<span class="slider"></span>
+	</label>
 </body>
 </html>
