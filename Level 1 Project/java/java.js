@@ -3,9 +3,12 @@ function initialize()
 	power = 0;
 	speed = 0;
 	integrity = 0;
-	powerOutput = document.getElementById("power-level");
-	speedOutput = document.getElementById("top-speed");
-	integrityOutput = document.getElementById("structural-integrity");
+	scanners = false;
+	defenses = false;
+	powerType = "none";
+	powerOutput = document.getElementById("powerLevel");
+	speedOutput = document.getElementById("topSpeed");
+	integrityOutput = document.getElementById("structuralIntegrity");
 }
 function powercounterUp()
 {
@@ -51,4 +54,36 @@ function display()
 	powerOutput.innerHTML = power;
 	speedOutput.innerHTML = speed;
 	integrityOutput.innerHTML = integrity;
+}
+function togglescanners()
+{
+	if (scanners == false){
+		scanners = true;
+	} else {
+		scanners = false;
+	}
+}
+function toggledefenses()
+{
+	if (defenses == false){
+		defenses = true;
+	} else {
+		defenses = false;
+	}
+}
+function solarSelect()
+{
+	document.getElementById("powerColor").style.backgroundColor = "#f9e07c";
+}
+function hydroSelect()
+{
+	document.getElementById("powerColor").style.backgroundColor = "#c7eff9";
+}
+function nuclearSelect()
+{
+	document.getElementById("powerColor").style.backgroundColor = "#b9fcb0";
+}
+function test()
+{
+	console.log("test");
 }

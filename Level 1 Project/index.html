@@ -6,24 +6,40 @@
 	<title>Robot Builder</title>
 </head>
 <body onload="initialize();">
-	<span id="power-counter">
-		Power Level: <span id="power-level">0</span>
+	<header id="powerColor">
+		<span id="solarPower">
+			<button onclick="solarSelect();">Solar Power</button>
+		</span>
+		<span id="hydroPower">
+			<button onclick="hydroSelect();">Hydro Power</button>
+		</span>
+		<span id="nuclearPower">
+			<button onclick="nuclearSelect();">Nuclear Power</button>
+		</span>
+	</header>
+	<span id="powerCounter">
+		Power Level: <span id="powerLevel">0</span>
 		<button onclick="powercounterUp();">Up</button>
 		<button onclick="powercounterDown();">Down</button>
 	</span>
-	<span id="speed-counter">
-		Top Speed: <span id="top-speed">0</span>
+	<span id="speedCounter">
+		Top Speed: <span id="topSpeed">0</span>
 		<button onclick="speedcounterUp();">Up</button>
 		<button onclick="speedcounterDown();">Down</button>
 	</span>
-	<span id="integrity-counter">
-		Structural Integrity: <span id="structural-integrity">0</span>
+	<span id="integrityCounter">
+		Structural Integrity: <span id="structuralIntegrity">0</span>
 		<button onclick="integritycounterUp();">Up</button>
 		<button onclick="integritycounterDown();">Down</button>
 	</span>
-	<label class="switch">
+	<label id="scanners" class="switch">
  		<input type="checkbox">
- 		<span class="slider"></span>
+ 		<span onclick="togglescanners();" class="slider"></span>
 	</label>
+	<label id="defenseSystem" class="switch">
+ 		<input type="checkbox">
+ 		<span onclick="toggledefenses();" class="slider"></span>
+	</label>
+
 </body>
 </html>
