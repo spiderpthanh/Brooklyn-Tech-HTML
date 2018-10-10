@@ -73,14 +73,17 @@ function toggledefenses()
 }
 function solarSelect()
 {
+	powerType = "solar";
 	document.getElementById("powerColor").style.backgroundColor = "#f9e07c";
 }
 function hydroSelect()
 {
+	powerType = "hydro";
 	document.getElementById("powerColor").style.backgroundColor = "#c7eff9";
 }
 function nuclearSelect()
 {
+	powerType = "nuclear";
 	document.getElementById("powerColor").style.backgroundColor = "#b9fcb0";
 }
 function test()
