@@ -4,19 +4,31 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<script src="java/java.js"></script>
 	<title>Robot Builder</title>
+	<link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
 </head>
 <body onload="initialize();">
 	<header id="powerColor">
+			<h1 id="powerTitle">No power Installed!</h1>
 		<span id="solarPower">
-			<button onclick="solarSelect();">Solar Power</button>
+			<button class="powerSelect" onclick="solarSelect();">Solar Power</button>
 		</span>
 		<span id="hydroPower">
-			<button onclick="hydroSelect();">Hydro Power</button>
+			<button class="powerSelect" onclick="hydroSelect();">Hydro Power</button>
 		</span>
 		<span id="nuclearPower">
-			<button onclick="nuclearSelect();">Nuclear Power</button>
+			<button class="powerSelect" onclick="nuclearSelect();">Nuclear Power</button>
 		</span>
 	</header>
+	<div>
+		<label id="scanners" class="switch">
+ 			<input type="checkbox">
+ 			<span onclick="togglescanners();" class="slider"></span>
+		</label>
+		<label id="defenseSystem" class="switch">
+ 			<input type="checkbox">
+ 			<span onclick="toggledefenses();" class="slider"></span>
+		</label>
+	</div>
 	<span id="powerCounter">
 		Power Level: <span id="powerLevel">0</span>
 		<button onclick="powercounterUp();">Up</button>
@@ -32,14 +44,5 @@
 		<button onclick="integritycounterUp();">Up</button>
 		<button onclick="integritycounterDown();">Down</button>
 	</span>
-	<label id="scanners" class="switch">
- 		<input type="checkbox">
- 		<span onclick="togglescanners();" class="slider"></span>
-	</label>
-	<label id="defenseSystem" class="switch">
- 		<input type="checkbox">
- 		<span onclick="toggledefenses();" class="slider"></span>
-	</label>
-
 </body>
 </html>
