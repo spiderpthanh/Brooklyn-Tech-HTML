@@ -11,16 +11,21 @@ header {
 #powerTitle {
 	font-family: 'Orbitron', sans-serif;
 }
+.switches {
+	display: flex;
+	align-content: center;
+	justify-content: center;
+}
 .powerSelect {
 	margin-right: 20px;
 	margin-left: 20px;
-
 }
 .switch {
   position: relative;
   display: inline-block;
   width: 60px;
   height: 34px;
+  margin: 10px;
 }
 .switch input {
   display: none;
@@ -48,7 +53,7 @@ header {
   transition: .4s;
 }
 
-input:checked + .slider {
+input#scanners:checked {
   background-color: #00FF00;
 }
 
