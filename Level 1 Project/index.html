@@ -20,29 +20,41 @@
 		</span>
 	</header>
 	<div id="switches">
-		<label class="switch">
- 			<input id="scanners" type="checkbox">
- 			<span onclick="togglescanners();" class="slider"></span>
+		<p class="toggleStatus" id="scannerStatus">scanners: nur</p>
+		<label id="scanners" class="switch">
+ 			<input type="checkbox">
+ 			<span onclick="togglescanners();" class="slider1"></span>
 		</label>
 		<label id="defenseSystem" class="switch">
  			<input type="checkbox">
- 			<span onclick="toggledefenses();" class="slider"></span>
+ 			<span onclick="toggledefenses();" class="slider2"></span>
 		</label>
+		<p id="defenseStatus">defense: nur</p>
 	</div>
-	<span id="powerCounter">
-		Power Level: <span id="powerLevel">0</span>
-		<button onclick="powercounterUp();">Up</button>
-		<button onclick="powercounterDown();">Down</button>
-	</span>
-	<span id="speedCounter">
-		Top Speed: <span id="topSpeed">0</span>
-		<button onclick="speedcounterUp();">Up</button>
-		<button onclick="speedcounterDown();">Down</button>
-	</span>
-	<span id="integrityCounter">
-		Structural Integrity: <span id="structuralIntegrity">0</span>
-		<button onclick="integritycounterUp();">Up</button>
-		<button onclick="integritycounterDown();">Down</button>
-	</span>
+	<span id="">
+		<span>
+			
+			
+		</span>
+		<span id="counters">
+			<br>
+			<span id="powerCounter">
+				Power Level: <span id="powerLevel">0</span>
+				<button onclick="powercounterUp();">Up</button>
+				<button onclick="powercounterDown();">Down</button>
+			</span>
+			<br>
+			<span id="speedCounter">
+				Top Speed: <span id="topSpeed">0</span>
+				<button onclick="speedcounterUp();">Up</button>
+				<button onclick="speedcounterDown();">Down</button>
+			</span>
+			<br>
+			<span id="integrityCounter">
+				Structural Integrity: <span id="structuralIntegrity">0</span>
+				<button onclick="integritycounterUp();">Up</button>
+				<button onclick="integritycounterDown();">Down</button>
+			</span>
+		</span>
 </body>
 </html>

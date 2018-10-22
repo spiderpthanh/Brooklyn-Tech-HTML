@@ -10,6 +10,8 @@ function initialize()
 	powerOutput = document.getElementById("powerLevel");
 	speedOutput = document.getElementById("topSpeed");
 	integrityOutput = document.getElementById("structuralIntegrity");
+	defenseOutput = document.getElementById("defenseStatus");
+	scannerOutput = document.getElementById("scannerStatus");
 }
 function powercounterUp()
 {
@@ -93,35 +95,64 @@ function togglescanners()
 {
 	if (scanners == false){
 		scanners = true;
+		scannerOutput.innerHTML = "scanners: yur"
 	} else {
 		scanners = false;
+		scannerOutput.innerHTML = "scanners: nur"
 	}
 }
 function toggledefenses()
 {
 	if (defenses == false){
 		defenses = true;
+		defenseOutput.innerHTML = "defenses: yur"
 	} else {
 		defenses = false;
+		defenseOutput.innerHTML = "defenses: nur"
 	}
 }
+
 function solarSelect()
 {
 	energyType = "solar";
 	document.getElementById("powerColor").style.backgroundColor = "#f9e07c";
 	powerType.innerHTML = "Solar Power Installed!";
+	if (power > 10 || hydro > 10 || integrity > 10) {
+		power = 10;
+		hydro = 10;
+		integrity = 10;
+	}
 }
 function hydroSelect()
 {
 	energyType = "hydro";
 	document.getElementById("powerColor").style.backgroundColor = "#c7eff9";
 	powerType.innerHTML = "Hydro Power Installed!";
+	if (power > 8) {
+		power = 8
+	}
+	if (speed > 12) {
+		speed = 12
+	}
+	if (integrity > 10) {
+		integrity = 10
+	}
 }
 function nuclearSelect()
 {
 	energyType = "nuclear";
 	document.getElementById("powerColor").style.backgroundColor = "#b9fcb0";
 	powerType.innerHTML = "Nuclear Power Installed!";
+	if (power > 12) {
+		power = 12
+	}
+	if (speed > 14) {
+		speed = 14
+	}
+	if (integrity > 4) {
+		integrity = 4
+	}
+	display();
 }
 function test()
 {
