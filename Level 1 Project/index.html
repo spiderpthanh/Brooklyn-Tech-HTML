@@ -31,11 +31,6 @@
 		</label>
 		<p id="defenseStatus">defense: nur</p>
 	</div>
-	<span id="">
-		<span>
-			
-			
-		</span>
 		<span id="counters">
 			<br>
 			<span id="powerCounter">
@@ -55,6 +50,19 @@
 				<button onclick="integritycounterUp();">Up</button>
 				<button onclick="integritycounterDown();">Down</button>
 			</span>
+		</span>
+		<div id="bigThumbnail">
+			<img id="bigThumbnailImage" src="images/white.png" width="500px" height="500px">
+		</div>
+		<div id="smallThumbnail">
+			<img class="smallImage" onclick="changeImageBlack();" src="images/black_zord.png">
+			<img class="smallImage" onclick="changeImageBlue();" src="images/blue_zord.png">
+			<img class="smallImage" onclick="changeImageGreen();" src="images/green_zord.png">
+			<img class="smallImage" onclick="changeImageRed();" src="images/red_zord.png">
+			<img class="smallImage" onclick="changeImageYellow();" src="images/yellow_zord.png">
+		</div>
+		<span>
+			<button>Finalize</button>
 		</span>
 </body>
 </html>

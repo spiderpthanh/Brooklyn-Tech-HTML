@@ -33,7 +33,7 @@ function powercounterDown()
 	power = power - 1;
 	if (power < 0) {
 		power = 0;
-		alert("YOU AINT GOT POWER B");
+		alert("There's no power installed!");
 	}
 	display();
 }
@@ -46,7 +46,7 @@ function speedcounterUp()
 	} else if (energyType == "solar" && speed > 10) {
 		speed = 10;
 	} else if (energyType == "hydro" && speed > 12) {
-		speed = 8;
+		speed = 12;
 	} else if (energyType == "nuclear" && speed > 14) {
 		speed = 14;
 	}
@@ -117,10 +117,14 @@ function solarSelect()
 	energyType = "solar";
 	document.getElementById("powerColor").style.backgroundColor = "#f9e07c";
 	powerType.innerHTML = "Solar Power Installed!";
-	if (power > 10 || hydro > 10 || integrity > 10) {
-		power = 10;
-		hydro = 10;
-		integrity = 10;
+	if (power > 10) {
+		power = 10
+	}
+	if (speed > 10) {
+		speed = 10
+	}
+	if (integrity > 10) {
+		integrity = 10
 	}
 }
 function hydroSelect()
@@ -154,7 +158,27 @@ function nuclearSelect()
 	}
 	display();
 }
-function test()
+function changeImageBlack() 
 {
-	console.log("test");
+	bigThumbnailImage.src = "images/black_zord.png"
+}
+function changeImageBlue() 
+{
+	bigThumbnailImage.src = "images/blue_zord.png"
+}
+function changeImageGreen() 
+{
+	bigThumbnailImage.src = "images/green_zord.png"
+}
+function changeImageRed() 
+{
+	bigThumbnailImage.src = "images/red_zord.png"
+}
+function changeImageYellow() 
+{
+	bigThumbnailImage.src = "images/yellow_zord.png"
+}
+function finalize()
+{
+
 }
