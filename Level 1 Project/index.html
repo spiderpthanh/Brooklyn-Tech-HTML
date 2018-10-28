@@ -20,7 +20,7 @@
 		</span>
 	</header>
 	<div id="switches">
-		<p class="toggleStatus" id="scannerStatus">scanners: nur</p>
+		<p class="toggleStatus" id="scannerStatus">Scanners: Unactivated</p>
 		<label id="scanners" class="switch">
  			<input type="checkbox">
  			<span onclick="togglescanners();" class="slider1"></span>
@@ -29,37 +29,39 @@
  			<input type="checkbox">
  			<span onclick="toggledefenses();" class="slider2"></span>
 		</label>
-		<p id="defenseStatus">defense: nur</p>
+		<p id="defenseStatus">defense: Unactivated</p>
 	</div>
-		<span id="counters">
+		<div id="counterContainer">
 			<br>
-			<span id="powerCounter">
+			<span class="counters" id="powerCounter">
 				Power Level: <span id="powerLevel">0</span>
 				<button onclick="powercounterUp();">Up</button>
 				<button onclick="powercounterDown();">Down</button>
 			</span>
 			<br>
-			<span id="speedCounter">
+			<span class="counters" id="speedCounter">
 				Top Speed: <span id="topSpeed">0</span>
 				<button onclick="speedcounterUp();">Up</button>
 				<button onclick="speedcounterDown();">Down</button>
 			</span>
 			<br>
-			<span id="integrityCounter">
+			<span class="counters" id="integrityCounter">
 				Structural Integrity: <span id="structuralIntegrity">0</span>
 				<button onclick="integritycounterUp();">Up</button>
 				<button onclick="integritycounterDown();">Down</button>
 			</span>
-		</span>
-		<div id="bigThumbnail">
-			<img id="bigThumbnailImage" src="images/white.png" width="500px" height="500px">
 		</div>
-		<div id="smallThumbnail">
-			<img class="smallImage" onclick="changeImageBlack();" src="images/black_zord.png">
-			<img class="smallImage" onclick="changeImageBlue();" src="images/blue_zord.png">
-			<img class="smallImage" onclick="changeImageGreen();" src="images/green_zord.png">
-			<img class="smallImage" onclick="changeImageRed();" src="images/red_zord.png">
-			<img class="smallImage" onclick="changeImageYellow();" src="images/yellow_zord.png">
+		<div id="thumbnailContainer">
+			<div id="bigThumbnail">
+				<img id="bigThumbnailImage" src="images/white.png" width="500px" height="500px">
+			</div>
+			<div id="smallThumbnail">
+				<img class="smallImage" onclick="changeImageBlack();" src="images/black_zord.png">
+				<img class="smallImage" onclick="changeImageBlue();" src="images/blue_zord.png">
+				<img class="smallImage" onclick="changeImageGreen();" src="images/green_zord.png">
+				<img class="smallImage" onclick="changeImageRed();" src="images/red_zord.png">
+				<img class="smallImage" onclick="changeImageYellow();" src="images/yellow_zord.png">
+			</div>
 		</div>
 		<span>
 			<button>Finalize</button>
