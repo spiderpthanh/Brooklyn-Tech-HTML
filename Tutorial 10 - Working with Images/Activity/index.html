@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		#big {
+			width: 500px;
+		}
+		.small {
+			width: 100px;
+		}
+	</style>
+	<script>
+		function initialize()
+		{
+			bigImage = document.getElementById("big");
+		}
+		function parrotChange()
+		{
+			bigImage.src = "images/parrot.png";
+		}
+		function dogChange()
+		{
+			bigImage.src = "images/dog.pjpg";
+		}
+		function catChange()
+		{
+			bigImage.src = "images/cat.jpg";
+		}
+		function fishChange()
+		{
+			bigImage.src = "images/fish.png";
+		}
+	</script>
+</head>
+<body onload="initialize()">
+	<div>
+		<img id="big" src="images/dog.jpg">
+	</div>
+	<div>
+		<img onclick="dogChange()" class="small" src="images/dog.jpg">
+		<img onclick="catChange()" class="small" src="images/cat.jpg">
+		<img onclick="fishChange()" class="small" src="images/fish.png">
+		<img onclick="parrotChange()" class="small" src="images/parrot.png">
+	</div>
+</body>
+</html>

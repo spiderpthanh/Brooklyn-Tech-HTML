@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dynamic CSS</title>
+	<style>
+		div
+		{
+			color: black;
+			background-color: orange;
+		}
+	</style>
+	<script>
+		function initialize()
+		{
+			halloweenText = document.getElementById("colordiv");
+			fore = "black";
+			back = "orange";
+			textWidth = 100;
+		}
+		function toggleColor()
+		{
+			var tmp = fore;
+			fore = back;
+			back = tmp;
+			display()
+		}
+		function display()
+		{
+			halloweenText.style.color = fore;
+			halloweenText.style.backgroundColor = back;
+			halloweenText.style.width = textWidth + "%";
+		}
+	</script>
+</head>
+<body onload="initialize();">
+	<div id="colordiv">
+		Happy Halloweenie!
+	</div>
+	<p>
+		<button onclick="toggleColor();">Toggle Colors</button>
+		<button onclick="textWidth = 25;display();">25% Width</button>
+		<button onclick="textWidth = 50;display();">50% Width</button>
+		<button onclick="textWidth = 75;display();">75% Width</button>
+		<button onclick="textWidth = 100;display();">100% Width</button>
+	</p>
+</body>
+</html>
