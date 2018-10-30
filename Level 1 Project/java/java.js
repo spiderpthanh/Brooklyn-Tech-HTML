@@ -95,20 +95,20 @@ function togglescanners()
 {
 	if (scanners == false){
 		scanners = true;
-		scannerOutput.innerHTML = "scanners: yur"
+		scannerOutput.innerHTML = "scanners: Activated"
 	} else {
 		scanners = false;
-		scannerOutput.innerHTML = "scanners: nur"
+		scannerOutput.innerHTML = "scanners: Unactivated"
 	}
 }
 function toggledefenses()
 {
 	if (defenses == false){
 		defenses = true;
-		defenseOutput.innerHTML = "defenses: yur"
+		defenseOutput.innerHTML = "defenses: Activated"
 	} else {
 		defenses = false;
-		defenseOutput.innerHTML = "defenses: nur"
+		defenseOutput.innerHTML = "defenses: Unactivated"
 	}
 }
 
@@ -126,6 +126,7 @@ function solarSelect()
 	if (integrity > 10) {
 		integrity = 10
 	}
+	display();
 }
 function hydroSelect()
 {
@@ -141,6 +142,7 @@ function hydroSelect()
 	if (integrity > 10) {
 		integrity = 10
 	}
+	display();
 }
 function nuclearSelect()
 {

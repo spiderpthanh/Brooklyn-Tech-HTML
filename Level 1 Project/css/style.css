@@ -1,17 +1,20 @@
 body {
 	margin: 0;
-	background-color: #FFFFFF;
+	background-color: #bababa;
 	font-family: 'Orbitron', sans-serif;
 	color: black;
 	font-weight: 500;
-	font-size: 15px;
-}
+	font-size: 16px;
+  }
 header {
 	background-color: #bababa;
 	height: 90px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+#thumbnailContainer {
+  
 }
 #bigThumbnail {
 	height: 500px;
@@ -28,7 +31,14 @@ header {
 }
 #switches {
 	display: inline-block;
-	border: 3px solid #babababa;
+	border: 3px solid #777777;
+  background-color: white;
+}
+#counterContainer {
+  width: 300px;
+  height: 100px;
+  border: 3px solid #777777;
+  background-color: white;
 }
 .smallImage {
 	width: 100px;
