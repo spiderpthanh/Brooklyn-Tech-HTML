@@ -2,12 +2,28 @@
 <html>
 <head>
 	<title>Color Changing Background</title>
+
 	<script>
-		function initialize
+		function initialize()
 		{
 			red = 255;
 			green = 255;
 			blue = 255;
+		}
+		function colorChange(color, varChange)
+		{
+			if (color == 1){
+				red = red + varChange;
+			} else if (color == 2){
+				green = green + varChange;
+			} else if (color == 3){
+				blue = blue + varChange;
+			}
+			display();
+		}
+		function display()
+		{
+			document.body.style.backgroundColor = "rgb(" + red + "," + green + "," + blue + ")";
 		}
 	</script>
 	<style>
@@ -16,34 +32,34 @@
 		}
 	</style>
 </head>
-<body>
+<body onload="initialize();">
 	<h1>Red</h1>
 	<div>
-		<button>+1</button>
-		<button>+5</button>
-		<button>+10</button>
-		<button>-10</button>
-		<button>-5</button>
-		<button>-1</button>
+		<button onclick="colorChange(1, +1);">+1</button>
+		<button onclick="colorChange(1, +5);">+5</button>
+		<button onclick="colorChange(1, +10);">+10</button>
+		<button onclick="colorChange(1, -10);">-10</button>
+		<button onclick="colorChange(1, -5);">-5</button>
+		<button onclick="colorChange(1, -1);">-1</button>
 
 	</div>
 	<h1>Green</h1>
 	<div>
-		<button>+1</button>
-		<button>+5</button>
-		<button>+10</button>
-		<button>-10</button>
-		<button>-5</button>
-		<button>-1</button>
+		<button onclick="colorChange(2, +1);">+1</button>
+		<button onclick="colorChange(2, +5);">+5</button>
+		<button onclick="colorChange(2, +10);">+10</button>
+		<button onclick="colorChange(2, -10);">-10</button>
+		<button onclick="colorChange(2, -5);">-5</button>
+		<button onclick="colorChange(2, -1);">-1</button>
 	</div>
 	<h1>Blue</h1>
 	<div>
-		<button>+1</button>
-		<button>+5</button>
-		<button>+10</button>
-		<button>-10</button>
-		<button>-5</button>
-		<button>-1</button>
+		<button onclick="colorChange(3, +1);">+1</button>
+		<button onclick="colorChange(3, +5);">+5</button>
+		<button onclick="colorChange(3, +10);">+10</button>
+		<button onclick="colorChange(3, -10);">-10</button>
+		<button onclick="colorChange(3, -5);">-5</button>
+		<button onclick="colorChange(3, -1);">-1</button>
 	</div>
 </body>
 </html>
