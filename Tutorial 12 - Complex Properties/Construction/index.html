@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Complex Properties</title>
+	<style>
+		div{
+			font: bold 24pt comic sans ms;
+		}
+	</style>
+	<script>
+		function initialize()
+		{
+			textOutput = document.getElementById("textdiv");
+			fontSizeOutput = document.getElementById("sizeout");
+			fSize = 24;
+			display();
+		}
+		function display()
+		{
+			fontSizeOutput.innerHTML = fSize;
+			textOutput.style.fontSize = fSize + "pt";
+		}
+	</script>
+</head>
+<body onload="initialize();">
+	<div id="textdiv">
+		I am a wonderful example of how fonts work!
+	</div>
+	<p>
+		<div id="controlText">Current Font Size: <span id="sizeout"></span>point</div>
+		<button onclick="fSize++; display();">Font Size ++</button>
+		<button onclick="fSize--; display();">Font Size --</button>
+	</p>
+</body>
+</html>
