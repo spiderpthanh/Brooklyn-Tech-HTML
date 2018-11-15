@@ -3,7 +3,7 @@
 <head>
 	<title>While Loops</title>
 	<script>
-		function initialize
+		function initialize()
 		{
 			numTwixOutput = document.getElementById("numTwix");
 			numScreamEggsOutput = document.getElementById("numEggs");
@@ -26,33 +26,46 @@
 		}
 		function giveCandy()
 		{
-			var selectedCandy = parseInt(Math.rondom() * 5)
-			if (selectedCandy == TWIX) {
-				numTwix--;
-				candyLog = "You gave out a Twix.<br />" + candyLog;
-
-			} else {
-				if (selectedCandy == EGG) {
-					numScreamEggs--;
-					candyLog = "You gave out a Twix.<br />" + candyLog;
+			var badSelection = true;
+			{
+				while (badSelection)
+				{
+				var selectedCandy = parseInt(Math.random() * 5)
+				if (selectedCandy == TWIX)
+				{
+					if (numTwix > 0)
+					{
+						numTwix--;
+						candyLog = "You gave out a Twix.<br />" + candyLog;
+						badSelection = false;
+					} else {
+						candyLog = "You tried to give out a Twix, but you have none left. <br />"
+						candyLog;
+					}
 				} else {
-					if (selectedCandy == TWIZZLER) {
-						numTwizzlers--;
+					if (selectedCandy == EGG) {
+						numScreamEggs--;
 						candyLog = "You gave out a Twix.<br />" + candyLog;
 					} else {
-						if (selectedCandy == AIRHEAD) {
-							numAirheads--;
+						if (selectedCandy == TWIZZLER) {
+							numTwizzlers--;
 							candyLog = "You gave out a Twix.<br />" + candyLog;
 						} else {
-							numRingPops==;
-							candyLog = "You gave out a Twix.<br />" + candyLog;
+							if (selectedCandy == AIRHEAD) {
+								numAirheads--;
+								candyLog = "You gave out a Twix.<br />" + candyLog;
+							} else {
+								numRingPops--;
+								candyLog = "You gave out a Twix.<br />" + candyLog;
+							}
 						}
 					}
 				}
+				display();
 			}
-			display();
-		}
-		function display();
+		}	
+		}	
+		function display()
 		{
 			numTwixOutput.innerHTML = numTwix;
 			numScreamEggsOutput.innerHTML = numScreamEggs;
