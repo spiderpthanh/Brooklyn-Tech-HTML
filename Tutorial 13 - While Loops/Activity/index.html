@@ -5,13 +5,35 @@
 	<script>
 		function initialize()
 		{
-			var red = parseInt(Math.random() * 254);
-			var green = parseInt(Math.random() * 254);
-			var blue = parseInt(Math.random() * 254);
+			r = 10;
+			g = parseInt(Math.random() * 256);
+			b = parseInt(Math.random() * 256);
+			rguess = 1;
+			gguess = parseInt(Math.random() * 256);
+			bguess = parseInt(Math.random() * 256)
+			
+		}
+		function redguesser()
+		{
+			while (rguess !== r) {
+				rguess++;
+
+			}
+		}
+		function print()
+		{
+
+		}
+		function display()
+		{
+
 		}
 	</script>
 </head>
-<body>
-
+<body onload="initialize();">
+	<button onclick="redguesser();">esketti</button>
+	<h1 id="redGuesses">Red Guesses</h1>
+	<h1 id="greenGuesses">Green Guesses</h1>
+	<h1 id="blueGuesses">Blue Guesses</h1>
 </body>
 </html>
