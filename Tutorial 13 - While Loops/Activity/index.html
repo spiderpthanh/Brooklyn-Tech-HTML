@@ -5,19 +5,22 @@
 	<script>
 		function initialize()
 		{
-			r = 10;
+			r = parseInt(Math.random() * 256);
 			g = parseInt(Math.random() * 256);
 			b = parseInt(Math.random() * 256);
-			rguess = 1;
+			rguess = parseInt(Math.random() * 256);
 			gguess = parseInt(Math.random() * 256);
-			bguess = parseInt(Math.random() * 256)
-			
+			bguess = parseInt(Math.random() * 256);
+			rlog = ("");
+			glog = document.getElementById("greenGuesses");
+			blog = document.getElementById("blueGuesses");
 		}
 		function redguesser()
 		{
 			while (rguess !== r) {
-				rguess++;
-
+				rguess = parseInt(Math.random() * 256);
+				rlog = (rlog) + "," + rlog;
+				console.log(rguess);
 			}
 		}
 		function print()
@@ -26,14 +29,20 @@
 		}
 		function display()
 		{
+			// rlogoutput.innerHTML = rlog;
+			// glogoutput.innerHTML = glog;
+			// blogoutput.innerHTML = blog;
 
 		}
 	</script>
 </head>
 <body onload="initialize();">
 	<button onclick="redguesser();">esketti</button>
-	<h1 id="redGuesses">Red Guesses</h1>
-	<h1 id="greenGuesses">Green Guesses</h1>
-	<h1 id="blueGuesses">Blue Guesses</h1>
+	<h1>Red Guesses</h1>
+	<p id="redGuesses">ya mom</p>
+	<h1>Green Guesses</h1>
+	<p id="greenGuesses"></p>
+	<h1>Blue Guesses</h1>
+	<p id="blueGuesses"></p>
 </body>
 </html>
