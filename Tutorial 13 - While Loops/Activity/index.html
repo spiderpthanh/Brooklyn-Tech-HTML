@@ -11,38 +11,45 @@
 			rguess = parseInt(Math.random() * 256);
 			gguess = parseInt(Math.random() * 256);
 			bguess = parseInt(Math.random() * 256);
+			rlogoutput = document.getElementById("redGuesses");
+			glogoutput = document.getElementById("greenGuesses");
+			blogoutput = document.getElementById("blueGuesses");
 			rlog = ("");
-			glog = document.getElementById("greenGuesses");
-			blog = document.getElementById("blueGuesses");
+			glog = ("");
+			blog = ("");
 		}
 		function redguesser()
 		{
 			while (rguess !== r) {
 				rguess = parseInt(Math.random() * 256);
-				rlog = (rlog) + "," + rlog;
-				console.log(rguess);
+				rlog += rguess + ", ";
 			}
-		}
-		function print()
-		{
-
+			while (gguess !== g) {
+				gguess = parseInt(Math.random() * 256);
+				glog += gguess + ", ";
+			}
+			while (bguess !== b) {
+				bguess = parseInt(Math.random() * 256);
+				blog += bguess + ", ";
+			}
+			display();
 		}
 		function display()
 		{
-			// rlogoutput.innerHTML = rlog;
-			// glogoutput.innerHTML = glog;
-			// blogoutput.innerHTML = blog;
-
+			rlogoutput.innerHTML = rlog;
+			glogoutput.innerHTML = glog;
+			blogoutput.innerHTML = blog;
+			document.getElementById("main").style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")"	;
 		}
 	</script>
 </head>
-<body onload="initialize();">
-	<button onclick="redguesser();">esketti</button>
+<body id="main" onload="initialize();">
+	<button onclick="redguesser();">Press 2 Guess!!!</button>
 	<h1>Red Guesses</h1>
-	<p id="redGuesses">ya mom</p>
+	<p id="redGuesses">Press the Button!</p>
 	<h1>Green Guesses</h1>
-	<p id="greenGuesses"></p>
+	<p id="greenGuesses">Press the Button!</p>
 	<h1>Blue Guesses</h1>
-	<p id="blueGuesses"></p>
+	<p id="blueGuesses">Press the Button!</p>
 </body>
 </html>
