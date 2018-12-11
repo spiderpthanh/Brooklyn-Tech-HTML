@@ -10,9 +10,6 @@
 			text-align: center;
 			margin: 0px;
 		}
-		h1{
-			margin-top: 131.5px;
-		}
 	</style>
 	<script>
 		function initialize()
@@ -20,6 +17,12 @@
 			var result = 0;
 			dieOutput = document.getElementById("die");
 			rollsOutput = document.getElementById("prevRolls");
+			oneResults = document.getElementById("prevRolls");
+			twoResults = document.getElementById("prevRolls");
+			threeResults = document.getElementById("prevRolls");
+			fourResults = document.getElementById("prevRolls");
+			fiveResults = document.getElementById("prevRolls");
+			sixResults = document.getElementById("prevRolls");
 		}
 		function getRandomInteger(lower, upper)
 		{
@@ -29,9 +32,9 @@
 		}
 		function rollDice(times)
 		{
-			for (var i = 1; i < times; i++){
+			for (var i = 0; i < times; i++){
 				result = getRandomInteger(1, 6);
-				
+				rollsOutput.innerHTML += result + ", ";
 			}
 		}
 		function display()
@@ -40,12 +43,20 @@
 		}
 	</script>
 </head>
-<body>
+<body onload="initialize();">
 	<div>
 		<h1 onclick="rollDice(3);" id="die">Roll the Die!</h1>
 	</div>
+	<h1>Previous Rolls</h1>
+	<div id="prevRolls"></div>
+	<h1>Previous Rolls</h1>
 	<div id="prevRolls">
-		
+		1: <span id="oneResults"></span> <br>
+		2: <span id="twoResults"></span> <br>
+		3: <span id="threeResults"></span> <br>
+		4: <span id="fourResults"></span> <br>
+		5: <span id="fiveResults"></span> <br>
+		6: <span id="sixResults"></span>
 	</div>
 </body>
 </html>
