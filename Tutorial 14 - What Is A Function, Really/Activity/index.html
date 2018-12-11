@@ -17,12 +17,18 @@
 			var result = 0;
 			dieOutput = document.getElementById("die");
 			rollsOutput = document.getElementById("prevRolls");
-			oneResults = document.getElementById("prevRolls");
-			twoResults = document.getElementById("prevRolls");
-			threeResults = document.getElementById("prevRolls");
-			fourResults = document.getElementById("prevRolls");
-			fiveResults = document.getElementById("prevRolls");
-			sixResults = document.getElementById("prevRolls");
+			oneOutput = document.getElementById("oneResults");
+			twoOutput = document.getElementById("twoResults");
+			threeOutput = document.getElementById("threeResults");
+			fourOutput = document.getElementById("fourResults");
+			fiveOutput = document.getElementById("fiveResults");
+			sixOutput = document.getElementById("sixResults");
+			amountOfOnes = 0;
+			amountOfTwos = 0; 
+			amountOfThrees = 0; 
+			amountOfFours = 0; 
+			amountOfFives = 0; 
+			amountOfSixes = 0; 
 		}
 		function getRandomInteger(lower, upper)
 		{
@@ -40,6 +46,12 @@
 		function display()
 		{
 			dieOutput.innerHTML = result;
+			oneOutput.innerHTML = 
+			twoOutput.innerHTML = 
+			threeOutput.innerHTML =
+			fourOutput.innerHTML =
+			fiveOutput.innerHTML =
+			sixOutput.innerHTML = 
 		}
 	</script>
 </head>
