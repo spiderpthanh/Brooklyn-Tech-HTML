@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>External Files</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script src="java/utilities.js"></script>
+	<script>
+		function initialize()
+		{
+			numberOutput = document.getElementById("numOut");
+			changeNumber();
+		}
+		function changeNumber()
+		{
+			numberOutput.innerHTML = getRandomInteger(1, 10);
+		}
+	</script>
+</head>
+<body onload="initialize();">
+	<h1>This is my cool page about external files.</h1>
+	<p id="numOut"></p>
+	<button onclick="changeNumber();">Change the number</button>
+</body>
+</html>
