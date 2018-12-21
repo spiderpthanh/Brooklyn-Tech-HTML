@@ -1,0 +1,20 @@
+body{
+	margin: 0;
+}
+header{
+	border-bottom: 3px solid black;
+	display: flex;
+	justify-content: center;
+}
+#navigation{
+	display: inline-block;
+	background-color: white;
+	border-right: 3px solid black;
+	border-bottom: 3px solid black;
+	height: 200px;
+	width: 80px;
+}
+#homeTitle{
+	display: inline-block;
+	margin: 0;
+}
