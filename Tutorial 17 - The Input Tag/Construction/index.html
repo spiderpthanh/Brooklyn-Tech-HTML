@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script>
+		function initialize()
+		{
+			firstInput = document.getElementById("first");
+			lastInput = document.getElementById("last");
+			greetingOutput = document.getElementById("greeting");
+			earthCheck = document.getElementById("earth");
+			marsCheck = document.getElementById("mars");
+			beltCheck = document.getElementById("belt");
+			firstName = "";
+			lastName = "";
+			origin = "";
+		}
+		function recordData(checkBoxElement)
+		{
+			updateCheckBoxes(checkBoxElement);
+			if (lastInput.value != "")
+				lastName = lastInput.value;
+			if (firstInput.value != "")
+				firstName = firstInput.value;
+			firstInput.value = "";
+			lastInput.value = "";
+			origin = getOrigin();
+			display();
+		}
+		function updateCheckBoxes(checkBoxElement)
+		{
+			if (checkBoxElement != earthCheck)
+				earthCheck.checked = false;
+			if (checkBoxElement != marsCheck)
+				marsCheck.checked = false;
+			if (checkBoxElement != beltCheck)
+				beltCheck.checked = false;
+			display();
+		}
+		function getOrigin()
+		{
+			if (earthCheck.checked)
+				return "Earth";
+			if (marsCheck.checked)
+				return "Mars";
+			if (beltCheck.checked)
+				return "the Belt";
+			return "nowhere";
+		}
+		function display()
+		{
+			greetingOutput.innerHTML = "Hello " + firstName + " " + lastName + " from " + origin + "!";
+		}
+	</script>
+</head>
+<body onload="initialize();">
+	<h1 id="greeting"></h1>
+	First Name: <input id="first" type="text">
+	Last Name: <input id="last" type="text">
+	<div>
+		<h3>Place of Origin</h3>
+		<label><input onchange="recordData(earthCheck);" id="earth" type="checkbox"> Earth</label><br>
+		<label><input onchange="recordData(marsCheck);" id="mars" type="checkbox"> Mars</label><br>
+		<label><input onchange="recordData(beltCheck);" id="belt" type="checkbox"> The Belt</label><br>
+	</div>
+	<hr>	
+	<button onclick="recordData();">Submit Information</button>
+</body>
+</html>
