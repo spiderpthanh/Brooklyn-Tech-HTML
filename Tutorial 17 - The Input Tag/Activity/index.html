@@ -13,7 +13,6 @@
 			questionNumber = 1;
 			name = "";
 			feeling = "";
-			color = "";
 			age = "";
 			country = "";
 		}
@@ -24,11 +23,21 @@
 			display(questionNumber);
 			userAnswer.value = "";
 			questionNumber += 1;
-			}
-			if (questionNumber == 2) {
-			feeling = checkFeelings();
-			display(questionNumber);
-			questionNumber += 1;
+			} else if (questionNumber == 2) {
+				feeling = checkFeelings();
+				display(questionNumber);
+				userAnswer.value = "";
+				questionNumber += 1;
+			} else if (questionNumber == 3) {
+				country = userAnswer.value;
+				display(questionNumber);
+				userAnswer.value = "";
+				questionNumber += 1;
+			} else if (questionNumber == 4) {
+				age = userAnswer.value;
+				display(questionNumber);
+				userAnswer.value = "";
+				questionNumber += 1;
 			}
 		}
 		function checkFeelings()
@@ -42,8 +51,23 @@
 		}
 		function display(answerNumber)
 		{
-			if (answerNumber == 1)
-			computerAnswer.innerHTML = "Nice to meet you, " + name + "! How are you feeling today?";
+			if (answerNumber == 1) {
+				computerAnswer.innerHTML = "Nice to meet you, " + name + "! How are you feeling today?";
+			}
+			if (answerNumber == 2) {
+				if (feeling == "Great") 
+					computerAnswer.innerHTML = "I'm glad to hear it! I'm also doing great! Where are you from?";
+				if (feeling == "Alright") 
+					computerAnswer.innerHTML = "Just alright today, huh? I'm feeling pretty alright myself. Where are you from?";
+				if (feeling == "Bad") 
+					computerAnswer.innerHTML = "Oh no! I hope you feel better soon! Where are you from?";
+			}
+			if (answerNumber == 3) {
+				computerAnswer.innerHTML = "Ah, I've been to " + country + " before! It's beautiful there! How old are you?";
+			}
+			if (answerNumber == 4) {
+				computerAnswer.innerHTML = "Yeah, I remember when I was your age. I'm a lot older than you think, y'know. Anyways, it was nice talking to you! I've never met a " + age + " year old from " + country + ", but I'm glad I did!";
+			}
 		}
 	</script>
 </head>
@@ -52,9 +76,11 @@
 		<h1 id="currentTopic">Hi, I'm a computer AI named Rudy! What's your name?</h1>
 	</div>
 	<input id="textboxAns" type="text">
-	<input type="checkbox" id="postive">Great
-	<input type="checkbox" id="neutral">Alright
-	<input type="checkbox" id="negative">Bad <br>
+	<div id="checkboxes">
+		<input type="checkbox" id="postive">Great
+		<input type="checkbox" id="neutral">Alright
+		<input type="checkbox" id="negative">Bad
+	</div>
 	<button onclick="recordData();">Submit Answer</button>
 </body>
 </html>
