@@ -1,0 +1,15 @@
+body{
+
+}
+#playerContainer{
+	border: 2px solid black;
+}
+#computerContainer{
+	border: 2px solid black;
+}
+#eventLog{
+	border: 2px solid black;
+}
+#resetButton{
+	background-color: red;
+}
