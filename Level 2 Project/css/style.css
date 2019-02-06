@@ -1,15 +1,19 @@
 body{
-
+	background-color: black;
+	color: white;
 }
 #playerContainer{
-	border: 2px solid black;
+	border: 2px solid white;
 }
 #computerContainer{
-	border: 2px solid black;
+	border: 2px solid white;
 }
 #eventLog{
-	border: 2px solid black;
+	border: 2px solid white;
 }
 #resetButton{
 	background-color: red;
+}
+.diceFaces{
+	width: 150px;
 }

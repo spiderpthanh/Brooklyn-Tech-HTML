@@ -12,7 +12,7 @@
 	</div>
 	<div id="playerContainer">
 		Yah got 12 tokens
-		<button onclick="rollDie();">Roll The Die!</button>
+		<button onclick="rollDice();">Roll The Die!</button>
 		<button>Add to your Red and Remove from Opponent's Black</button>
 		<button>Add to your Red Black and from Opponent's Remove Red</button>
 		<button>Remove from your Red and Add to Opponent's Black</button>
@@ -20,6 +20,12 @@
 		<div id="lastRollContainer">Player's last roll: 420</div>
 	</div>
 	<div id="eventLog">I did a ya mom last round...</div>
-	<button id="resetButton">reset</button>
+	<div id="gameUI">
+		<button id="resetButton" onclick="reset();">reset</button>
+		<div>
+			<img class="diceFaces" id="redDieFace" src="images/red-0.png">
+			<img class="diceFaces" id="whiteDieFace" src="images/white-0.png">
+		</div>
+	</div>
 </body>
 </html>

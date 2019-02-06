@@ -2,11 +2,16 @@ function initialize()
 {
 	amountPlayerTokens = 12;
 	amountComputerTokens = 12;
-	currentDiceValue = 0;
+	redDiceValue = 0;
+	whiteDiceValue = 0;
+	redDieFaceOutput = document.getElementById("redDieFace");
+	whiteDieFaceOutput = document.getElementById("whiteDieFace");
 }
-function rollDie()
+function rollDice()
 {
-	currentDiceValue = getRandomInteger(1,6)
+	redDiceValue = getRandomInteger(1,6);
+	whiteDiceValue = getRandomInteger(1,6);
+	display();
 }
 function getRandomInteger(lower, upper)
 {
@@ -14,7 +19,13 @@ function getRandomInteger(lower, upper)
 	var rnd = parseInt(Math.random() * multiplier) + lower;
 	return rnd;
 }
+function reset()
+{
+	redDieFaceOutput.src = "images/red-0.png";
+	whiteDieFaceOutput.src = "images/white-0.png";
+}
 function display()
 {
-	
+	redDieFaceOutput.src = "images/red-" + redDiceValue + ".png";
+	whiteDieFaceOutput.src = "images/white-" + whiteDiceValue + ".png";
 }
