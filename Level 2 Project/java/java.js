@@ -23,6 +23,8 @@ function reset()
 {
 	redDieFaceOutput.src = "images/red-0.png";
 	whiteDieFaceOutput.src = "images/white-0.png";
+	redDiceValue = 0;
+	whiteDiceValue = 0;
 }
 function display()
 {
