@@ -8,8 +8,9 @@
 <body onload="initialize();">
 	<div id="computerContainer">
 		<p id="computerTokenDisplay">The Computer has 12 red tokens and 12 black tokens</p>
-		<div id="lastRollContainer">Computer's last roll: 69</div>
+		<div>Computer's last rolls: <p id="computerLastRedRoll">0</p> <p id="computerLastBlackRoll">0</p></div>
 	</div>
+	<hr>
 	<div id="playerContainer">
 		<p id="playerTokenDisplay">You have 12 red tokens and 12 black tokens</p>
 		<button onclick="rollDice();">Roll The Die!</button>
@@ -17,9 +18,10 @@
 		<button onclick="changeTokens(2);">Add to your Black and Remove from Opponent's Red</button>
 		<button onclick="changeTokens(3);">Remove from your Red and Add to Opponent's Black</button>
 		<button onclick="changeTokens(4);">Remove from your Black and Add to Opponent's Red</button>
-		<div id="lastRollContainer">Player's last roll: 420</div>
+		<div>Your last rolls: <p id="playerLastRedRoll">0</p> <p id="playerLastBlackRoll">0</p></div>
 	</div>
-	<div id="eventLog">I did a ya mom last round...</div>
+	<hr>
+	<div id="eventLog">Play a turn!</div>
 	<div id="gameUI">
 		<button id="resetButton" onclick="reset();">reset</button>
 		<div id="dieContainer">
