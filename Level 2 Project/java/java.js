@@ -6,7 +6,7 @@ function initialize()
 	amountComputerRedTokens = 12;
 	amountComputerBlackTokens = 12;
 	redDiceValue = 0;
-	blackDiceValue = 0; 
+	blackDiceValue = 0;
 	currentEventLog = "";
 	redDieFaceOutput = document.getElementById("redDieFace");
 	blackDieFaceOutput = document.getElementById("blackDieFace");
@@ -21,14 +21,23 @@ function initialize()
 function rollDice()
 {
 	if (currentTurn == "player") {
-		playerRedDiceValue = getRandomInteger(1,6);
-		playerBlackDiceValue = getRandomInteger(1,6);
+		redDiceValue = getRandomInteger(1,6);
+		blackDiceValue = getRandomInteger(1,6);
 	}
 	if (currentTurn == "computer") {
-		computerRedDiceValue = getRandomInteger(1,6);
-		computerBlackDiceValue = getRandomInteger(1,6);
+		redDiceValue = getRandomInteger(1,6);
+		blackDiceValue = getRandomInteger(1,6);
 	}
 	display();
+}
+function computerTurn()
+{
+	if () {}
+}
+function endPlayerTurn()
+{
+	currentTurn = "computer";
+	
 }
 function getRandomInteger(lower, upper)
 {
@@ -41,7 +50,8 @@ function changeTokens(functionNumber)
 	if (functionNumber == 1) {
 		amountPlayerRedTokens += redDiceValue;
 		amountComputerBlackTokens -= blackDiceValue;
-		concatenateEventLog("added to", "red", "removed from", "black");
+		concatenateEventLog("added to", "red", "removed from", "black");\
+		end
 	}
 	if (functionNumber == 2) {
 		amountPlayerBlackTokens += blackDiceValue;
@@ -70,9 +80,10 @@ function reset()
 	blackDieFaceOutput.src = "images/black-0.png";
 	redDiceValue = 0;
 	blackDiceValue = 0;
+	eventLogOutput.innerHTML = "";
 	computerTokenOutput.innerHTML = "";
 	playerTokenOutput.innerHTML = "";
-	eventLogOutput.innerHTML += "";
+	eventLogOutput.innerHTML = "";
 }
 function display()
 {
