@@ -21,19 +21,13 @@ function initialize()
 }
 function rollDice()
 {
-	if (currentTurn == "player") {
 		redDiceValue = getRandomInteger(1,6);
 		blackDiceValue = getRandomInteger(1,6);
-	}
-	if (currentTurn == "computer") {
-		redDiceValue = getRandomInteger(1,6);
-		blackDiceValue = getRandomInteger(1,6);
-	}
 	display();
 }
 function computerTurn()
 {
-	console.log("test")
+	console.log("h")
 }
 function endPlayerTurn()
 {
@@ -42,6 +36,7 @@ function endPlayerTurn()
 	}
 	playerLastRedRollOutput.innerHTML = redDiceValue;
 	playerLastBlackRollOutput.innerHTML = blackDiceValue;
+	currentTurn = "computer";
 	computerTurn();
 }
 function getRandomInteger(lower, upper)
@@ -72,7 +67,14 @@ function changeTokens(functionNumber)
 		amountComputerRedTokens += redDiceValue;
 		concatenateEventLog("removed from", "black", "added to", "red");
 	}
+	if (amountPlayerBlackTokens <= 0 || amountComputerBlackTokens <= 0) {
+		winnerMessage();
+	}
 	endPlayerTurn();
+}
+function winnerMessage()
+{
+	alert("ggwp!")
 }
 function concatenateEventLog(playerPile, playerColor, computerPile, computerColor)
 {
