@@ -21,13 +21,25 @@ function initialize()
 }
 function rollDice()
 {
-		redDiceValue = getRandomInteger(1,6);
-		blackDiceValue = getRandomInteger(1,6);
-	display();
+	redDiceValue = getRandomInteger(1,6);
+	blackDiceValue = getRandomInteger(1,6);
+	redDieFaceOutput.src = "images/red-" + redDiceValue + ".png";
+	blackDieFaceOutput.src = "images/black-" + blackDiceValue + ".png";
 }
 function computerTurn()
 {
-	console.log("h")
+	rollDice();
+	var x = getRandomInteger(1,4);
+	if (x > 1) {
+		if (amountComputerRedTokens > amountPlayerRedTokens) {
+			if (amountComputerRedTokens - redDiceValue > amountPlayerRedTokens)
+				console.log("nyah")
+		}
+	} else {
+		changeTokens(getRandomInteger(1,4));
+	}
+	computerLastRedRollOutput.innerHTML = redDiceValue;
+	computerLastBlackRollOutput.innerHTML = blackDiceValue;
 }
 function endPlayerTurn()
 {
@@ -68,13 +80,17 @@ function changeTokens(functionNumber)
 		concatenateEventLog("removed from", "black", "added to", "red");
 	}
 	if (amountPlayerBlackTokens <= 0 || amountComputerBlackTokens <= 0) {
-		winnerMessage();
+		checkWinner();
 	}
 	endPlayerTurn();
 }
-function winnerMessage()
+function checkWinner()
 {
-	alert("ggwp!")
+	if (amountPlayerRedTokens > amountComputerRedTokens) {
+		alert("good job player")
+	} else {
+		alert("good job computer")
+	}
 }
 function concatenateEventLog(playerPile, playerColor, computerPile, computerColor)
 {
@@ -94,11 +110,7 @@ function reset()
 }
 function display()
 {
-	redDieFaceOutput.src = "images/red-" + redDiceValue + ".png";
-	blackDieFaceOutput.src = "images/black-" + blackDiceValue + ".png";
 	computerTokenOutput.innerHTML = "The Computer has " + amountComputerRedTokens + " red tokens and " + amountComputerBlackTokens + " black tokens."
 	playerTokenOutput.innerHTML = "You have " + amountPlayerRedTokens + " red tokens and " + amountPlayerBlackTokens + " black tokens."
-	// computerLastRedRollOutput.innerHTML = redDiceValue;
-	// computerLastBlackRollOutput.innerHTML = blackDiceValue;
 	eventLogOutput.innerHTML += currentEventLog;
 }
