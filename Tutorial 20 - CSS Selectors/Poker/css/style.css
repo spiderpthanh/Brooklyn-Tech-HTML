@@ -1,0 +1,10 @@
+body{
+	background-image: url("../images/table.png")
+}
+table{
+	border: solid gold 2px;
+	background-color: white;
+}
+h1, h2{
+	text-align: center;
+}

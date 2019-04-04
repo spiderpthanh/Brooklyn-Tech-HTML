@@ -33,7 +33,9 @@ function computerTurn()
 	if (x > 1) {
 		if (amountComputerRedTokens > amountPlayerRedTokens) {
 			if (amountComputerRedTokens - redDiceValue > amountPlayerRedTokens)
-				console.log("nyah")
+				console.log("can maintain lead")
+		} else {
+			console.log("can't maintain lead")
 		}
 	} else {
 		changeTokens(getRandomInteger(1,4));
