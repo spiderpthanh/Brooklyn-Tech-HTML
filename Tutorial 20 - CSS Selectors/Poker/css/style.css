@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'copper_penny_dtpregular';
+    src: url('copperpennydtp-webfont.woff2') format('woff2'),
+         url('copperpennydtp-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 body{
 	background-image: url("../images/table.png")
 }
@@ -5,6 +12,27 @@ table{
 	border: solid gold 2px;
 	background-color: white;
 }
-h1, h2{
+h1, h2, h3{
 	text-align: center;
+	color: #d8b482;
+	font-family: 'copper_penny_dtpregular';
+	font-weight: lighter;
+}
+#cardbacks, #tentoaDogs{
+	display: flex;
+	justify-content: space-between;
+}
+#dogsRefreshments{
+	text-align: center;
+}
+#infoTable{
+	display: flex;
+	justify-content: space-evenly;
+}
+table{
+	border: groove;
+	border-width: 10px;
+	border-color: #cd853f;
+	color: #cd853f;
+	background-color: #f5deb3;
 }
