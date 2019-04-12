@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Into The Woods</title>
+		<link rel = "stylesheet" href = "css/woods.css" />
+		<style></style>
+		<script>
+			function initialize()
+			{
+				bigImage = document.getElementById("displayimage");
+			}
+			function toggleImages(imageName)
+			{
+				if (imageName == "")
+					bigImage.style.display = "none";
+				else{
+					bigImage.style.display = "inline";
+					bigImage.src = imageName;
+				}
+			}
+		</script>
+	</head>
+		
+	<body onload = "initialize();">
+		<h1><span>Welcome to the Bamboo Forest</span></h1><br />
+		
+		<ul>
+			<li onmouseover="toggleImages('images/Usal-Redwood-Forest.jpg');" onmouseout="toggleImages('')">
+				<img class="bullet" src = "images/panda wide eyes.png" />
+				About Forests
+			</li><br />
+			<li onmouseover="toggleImages('images/bamboo.jpg');" onmouseout="toggleImages('')">
+				<img class="bullet" src = "images/panda wide eyes.png" /> 
+				About Bamboo
+			</li><br />
+			<li onmouseover="toggleImages('images/panda_thumb.jpg');" onmouseout="toggleImages('')">
+				<img class="bullet" src = "images/panda wide eyes.png" /> 
+				About Pandas
+			</li><br />
+		</ul>
+		<img id = "displayimage" />
+	</body>
+</html>
