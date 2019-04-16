@@ -2,14 +2,16 @@
 <html>
 <head>
 	<title>My First AI</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 	<script>
 		function initialize()
 		{
 			userAnswer = document.getElementById("textboxAns");
 			computerAnswer = document.getElementById("currentTopic");
-			postiveCheck = document.getElementById("postive");
-			neutralCheck = document.getElementById("neutral");
-			negativeCheck = document.getElementById("negative");
+			postiveCheckOutput = document.getElementById("postive");
+			neutralCheckOutput = document.getElementById("neutral");
+			negativeCheckOutput = document.getElementById("negative");
+			checkboxesOutput = document.getElementById("textboxAns")
 			questionNumber = 1;
 			name = "";
 			feeling = "";
@@ -23,11 +25,16 @@
 			display(questionNumber);
 			userAnswer.value = "";
 			questionNumber += 1;
+			checkboxesOutput.style.visibility = visible;
 			} else if (questionNumber == 2) {
 				feeling = checkFeelings();
 				display(questionNumber);
 				userAnswer.value = "";
 				questionNumber += 1;
+				textboxAns.disabled = false;
+				postiveCheck.disabled = true;
+				neutralCheck.disabled = true;
+				negativeCheck.disabled = true;
 			} else if (questionNumber == 3) {
 				country = userAnswer.value;
 				display(questionNumber);
@@ -42,12 +49,12 @@
 		}
 		function checkFeelings()
 		{
-			if (postiveCheck.checked)
-				return "Great";
-			if (neutralCheck.checked)
-				return "Alright";
-			if (negativeCheck.checked)
-				return "Bad";
+			if (postiveCheck.checked) 
+				return "Great"
+			if (neutralCheck.checked) 
+				return "Alright"
+			if (negativeCheck.checked) 
+				return "Bad"
 		}
 		function display(answerNumber)
 		{
@@ -70,13 +77,36 @@
 			}
 		}
 	</script>
+	<style>
+		h1
+		{
+			font-family: 'Montserrat', sans-serif;
+			text-align: center;
+		}
+		body
+		{
+			text-align: center;
+		}
+		#textboxAns
+		{
+			text-align: center;
+			width: 40%;
+			height: 50px;
+		}
+		#checkboxes
+		{
+			padding: 15px;
+		}
+	</style>
 </head>
 <body onload="initialize();">
 	<div id="computerConvo">
-		<h1 id="currentTopic">Hi, I'm a computer AI named Rudy! What's your name?</h1>
+		<h1 id="currentTopic">
+			Hi, I'm a computer AI named <span style="color: #4285F4;">R</span><span style="color: #DB4437;" >u</span><span style="color: #F4B400;" >d</span><span style="color: #0F9D58;" >y</span><span style="color: #4285F4;">!</span> What's your name?
+		</h1>
 	</div>
 	<input id="textboxAns" type="text">
-	<div id="checkboxes">
+	<div id="checkboxes" style="visibility: hidden;">
 		<input type="checkbox" id="postive">Great
 		<input type="checkbox" id="neutral">Alright
 		<input type="checkbox" id="negative">Bad
