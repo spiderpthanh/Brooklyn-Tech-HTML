@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 <head>
 	<title>My First AI</title>
@@ -8,10 +8,10 @@
 		{
 			userAnswer = document.getElementById("textboxAns");
 			computerAnswer = document.getElementById("currentTopic");
-			postiveCheckOutput = document.getElementById("postive");
-			neutralCheckOutput = document.getElementById("neutral");
-			negativeCheckOutput = document.getElementById("negative");
-			checkboxesOutput = document.getElementById("textboxAns")
+			postiveRadioOutput = document.getElementById("postive");
+			neutralRadioOutput = document.getElementById("neutral");
+			negativeRadioOutput = document.getElementById("negative");
+			radioBoxesOutput = document.getElementById("radioBoxes")
 			questionNumber = 1;
 			name = "";
 			feeling = "";
@@ -20,27 +20,32 @@
 		}
 		function recordData()
 		{
-			if (questionNumber == 1) {
+			if (questionNumber == 1 && userAnswer.value != "") {
 			name = userAnswer.value;
 			display(questionNumber);
 			userAnswer.value = "";
 			questionNumber += 1;
-			checkboxesOutput.style.visibility = visible;
-			} else if (questionNumber == 2) {
+			radioBoxesOutput.style.visibility = "visible";
+			textboxAns.style.visibility = "hidden";
+			return;
+			}
+			if (questionNumber == 2) {
 				feeling = checkFeelings();
 				display(questionNumber);
 				userAnswer.value = "";
 				questionNumber += 1;
-				textboxAns.disabled = false;
-				postiveCheck.disabled = true;
-				neutralCheck.disabled = true;
-				negativeCheck.disabled = true;
-			} else if (questionNumber == 3) {
+				textboxAns.style.visibility = "visible";
+				radioBoxesOutput.style.visibility = "hidden";
+				return;
+			}
+			if (questionNumber == 3 && userAnswer.value != "") {
 				country = userAnswer.value;
 				display(questionNumber);
 				userAnswer.value = "";
 				questionNumber += 1;
-			} else if (questionNumber == 4) {
+				return;
+			}
+			if (questionNumber == 4 && userAnswer.value != "") {
 				age = userAnswer.value;
 				display(questionNumber);
 				userAnswer.value = "";
@@ -49,11 +54,11 @@
 		}
 		function checkFeelings()
 		{
-			if (postiveCheck.checked) 
+			if (postiveRadioOutput.checked) 
 				return "Great"
-			if (neutralCheck.checked) 
+			if (neutralRadioOutput.checked) 
 				return "Alright"
-			if (negativeCheck.checked) 
+			if (negativeRadioOutput.checked) 
 				return "Bad"
 		}
 		function display(answerNumber)
@@ -87,15 +92,33 @@
 		{
 			text-align: center;
 		}
+		input:focus
+		{
+			outline: none;
+		}
 		#textboxAns
 		{
 			text-align: center;
 			width: 40%;
 			height: 50px;
+			border-radius: 50px;
+			font-size: 25px;
+			font-family: 'Montserrat', sans-serif;
+			margin-top: 30px;
 		}
-		#checkboxes
+		#radioBoxes
 		{
 			padding: 15px;
+			font-family: 'Montserrat', sans-serif;
+		}
+		#submit
+		{
+			background-color: #e2e2e2;
+			font-family: 'Montserrat', sans-serif;
+			font-size: 15px;
+			width: 150px;
+			height: 40px;
+			border-radius: 20px;
 		}
 	</style>
 </head>
@@ -106,11 +129,11 @@
 		</h1>
 	</div>
 	<input id="textboxAns" type="text">
-	<div id="checkboxes" style="visibility: hidden;">
-		<input type="checkbox" id="postive">Great
-		<input type="checkbox" id="neutral">Alright
-		<input type="checkbox" id="negative">Bad
+	<div id="radioBoxes" style="visibility: hidden;">
+		<input type="radio" name="feelingRadio" id="postive">Great
+		<input type="radio" name="feelingRadio" id="neutral">Alright
+		<input type="radio" name="feelingRadio" id="negative">Bad
 	</div>
-	<button onclick="recordData();">Submit Answer</button>
+	<button id="submit" onclick="recordData();">Submit Answer</button>
 </body>
 </html>
