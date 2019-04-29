@@ -1,39 +1,47 @@
-html{
+html {
 	background-image: url("../images/bamboo-forest.jpg");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: 100vw 100vh;
 }
-img.bullet{
+img.bullet {
 	display: none;
 }
-li, span{
+li, span {
 	background-color: #D9ECCA;
 	color: #3E6022
+	opacity: 0.85;
+	border: 2px solid #3E6022;
+	border-radius: 12px;
+	box-shadow: 8px 8px 5px darkgray;
 }
-li{
+li {
 	list-style: none;
 	width: 175px;
 	height: 40px;
 	padding: 12px;
 	font-weight: bold;
 }
-h1{
+h1 {
 	text-align: center;
 	margin-top: 100px;
 }
-h1 span{
+h1 span {
 	padding: 2px 6px;
 }
-img#displayimage{
+img#displayimage {
 	display: none;
 	margin-left: 35%;
 	margin-top: -260px;
 	height: 425px;
 }
-img.bullet{
+img.bullet {
 	display: none;
 }
-li:hover{
-	
+li:hover img.bullet {
+	display: inline;
+}
+img.bullet {
+	display: none;
+	height: 40px;
 }
