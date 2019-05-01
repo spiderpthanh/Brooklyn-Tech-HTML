@@ -29,25 +29,26 @@ function rollDice()
 function computerTurn()
 {
 	rollDice();
-	var x = getRandomInteger(1,4);
-	if (x > 1) {
-		if (amountComputerRedTokens > amountPlayerRedTokens) {
-			if (amountComputerRedTokens - redDiceValue > amountPlayerRedTokens)
-				console.log("can maintain lead")
-		} else {
-			console.log("can't maintain lead")
-		}
-	} else {
-		changeTokens(getRandomInteger(1,4));
-	}
+	changeTokens(getRandomInteger(1,4));
+	// var x = getRandomInteger(1,4);
+	// if (x > 1) {
+	// 	if (amountComputerRedTokens > amountPlayerRedTokens) {
+	// 		if (amountComputerRedTokens - redDiceValue > amountPlayerRedTokens)
+	// 			console.log("can maintain lead")
+	// 	} else {
+	// 		console.log("can't maintain lead")
+	// 	}
+	// } else {
+		
+	// }
 	computerLastRedRollOutput.innerHTML = redDiceValue;
 	computerLastBlackRollOutput.innerHTML = blackDiceValue;
 }
 function endPlayerTurn()
 {
-	for (var i = 0; i < htmlButtonsArray.length; i++) {
-		htmlButtonsArray[i].disabled = true;
-	}
+	// for (var i = 0; i < htmlButtonsArray.length; i++) {
+	// 	htmlButtonsArray[i].disabled = true;
+	// }
 	playerLastRedRollOutput.innerHTML = redDiceValue;
 	playerLastBlackRollOutput.innerHTML = blackDiceValue;
 	currentTurn = "computer";
