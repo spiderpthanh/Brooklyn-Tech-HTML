@@ -29,7 +29,7 @@
 			textboxAns.style.visibility = "hidden";
 			return;
 			}
-			if (questionNumber == 2) {
+			if (questionNumber == 2 && postiveRadioOutput.checked || neutralRadioOutput.checked || negativeRadioOutput.checked) {
 				feeling = checkFeelings();
 				display(questionNumber);
 				userAnswer.value = "";

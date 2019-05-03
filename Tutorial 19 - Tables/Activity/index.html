@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<script src="utilities.js"></script>
+    <script>
+      function initialize()
+      {
+        diceTableOutput = document.getElementById("diceTable");
+        rollTableOutput = document.getElementById("rollTable");
+        rollAmountBoxOutput = document.getElementById("rollAmountBox");
+        rollAmountSelectorOutout = document.getElementById("rollAmountSelector")
+      }
+      function rollDice()
+      {
+        var numRolls = rollAmountBoxOutput.value;
+        if (numRolls != 0) {
+          for (var i = 0; i < numRolls; i++) {
+          var dieRoll = getRandomInteger(1,6);
+          var newRow = diceTable.insertRow();
+          var newCell = newRow.insertCell();
+          newCell.innerHTML = "Roll " + (i + 1);
+          newCell = newRow.insertCell();
+          newCell.innerHTML = dieRoll;
+          }
+        }
+        rollAmountSelectorOutout.style.visibility = "hidden";
+       diceTable.style.visibility = "visible";
+       rollTable.style.visibility = "visible";
+      }
+		</script>
+		<style>
+      table{
+        border: thick solid grey;
+        border-collapse: collapse;
+        width: 25%;
+        margin: 10px;
+      }
+      th, td{
+        border: thin solid black;
+        padding: 8px;
+        width: 50%;
+      }
+      #rollAmountSelector{
+        margin-top: 10px;
+        border: thick solid grey;
+        border-collapse: collapse;
+        width: 25%;
+        padding: 15px;
+        text-align: center;
+      }
+		</style>
+	</head>
+	<body onload="initialize();">
+    <table id="diceTable" style="visibility: hidden;">
+      <tr>
+        <th>Roll</th>
+        <th>Result</th>
+      </tr>
+		</table>
+    <table id="rollTable" style="visibility: hidden;">
+      <tr>
+        <th>Number</th>
+        <th>Amount Rolled</th>
+      </tr>
+    </table>
+    <div id="rollAmountSelector">
+      <h1>Pick a number</h1>
+      <input type="number" id="rollAmountBox">
+      <button style="margin-top: 15px;" onclick="rollDice();">Submit</button>
+    </div>
+	</body>
+</html>

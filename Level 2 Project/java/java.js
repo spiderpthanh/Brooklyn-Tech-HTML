@@ -89,16 +89,16 @@ function changeTokens(functionNumber)
 	if (amountPlayerBlackTokens <= 0 || amountComputerBlackTokens <= 0) {
 		checkWinner();
 	}
-	if (currentTurn = "player") {
+	if (currentTurn == "player") {
 		endPlayerTurn();
 	}
 }
 function checkWinner()
 {
 	if (amountPlayerRedTokens > amountComputerRedTokens) {
-		alert("good job player")
+		alert("You win! Congrats!")
 	} else {
-		alert("good job computer")
+		alert("The Computer wins! Better luck next time!")
 	}
 }
 function concatenateEventLog(playerPile, playerColor, computerPile, computerColor)
