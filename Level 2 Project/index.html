@@ -6,28 +6,29 @@
 	<script src="java/java.js"></script>
 </head>
 <body onload="initialize();">
-	<div id="computerContainer">
-		<p id="computerTokenDisplay">The Computer has 12 red tokens and 12 black tokens.</p>
-		<div>Computer's last rolls: <p id="computerLastRedRoll">0</p> <p id="computerLastBlackRoll">0</p></div>
-	</div>
-	<hr>
-	<div id="playerContainer">
-		<p id="playerTokenDisplay">You have 12 red tokens and 12 black tokens.</p>
-		<button class="tokenActions" onclick="rollDice();">Roll The Die!</button>
-		<button class="tokenActions" onclick="changeTokens(1);">Add to your Red and Remove from Opponent's Black</button>
-		<button class="tokenActions" onclick="changeTokens(2);">Add to your Black and Remove from Opponent's Red</button>
-		<button class="tokenActions" onclick="changeTokens(3);">Remove from your Red and Add to Opponent's Black</button>
-		<button class="tokenActions" onclick="changeTokens(4);">Remove from your Black and Add to Opponent's Red</button>
-		<div>Your last rolls: <p id="playerLastRedRoll">0</p> <p id="playerLastBlackRoll">0</p></div>
-	</div>
-	<hr>
-	<div id="eventLog">Log of Events:</div>
+	<h1>4D CHESS</h1>
 	<div id="gameUI">
-		<button id="resetButton" onclick="reset();">reset</button>
+		<button id="resetButton" onclick="window.location.reload();">reset</button>
 		<div id="dieContainer">
 			<img class="diceFaces" id="redDieFace" src="images/red-0.png">
 			<img class="diceFaces" id="blackDieFace" src="images/black-0.png">
 		</div>
 	</div>
+	<div id="computerContainer">
+		<p id="computerTokenDisplay">The Computer has 12 red tokens and 12 black tokens.</p>
+		<div>Computer's last rolls: <p id="computerLastRedRoll">0</p> <p id="computerLastBlackRoll">0</p></div>
+	</div>
+	<div id="playerContainer">
+		<p id="playerTokenDisplay">You have 12 red tokens and 12 black tokens.</p>
+		<div>
+			<button class="tokenActions" onclick="rollDice();">Roll The Die!</button>
+			<button class="tokenActions" onclick="changeTokens(1);">Add to your Red and Remove from Opponent's Black</button>
+			<button class="tokenActions" onclick="changeTokens(2);">Add to your Black and Remove from Opponent's Red</button>
+			<button class="tokenActions" onclick="changeTokens(3);">Remove from your Red and Add to Opponent's Black</button>
+			<button class="tokenActions" onclick="changeTokens(4);">Remove from your Black and Add to Opponent's Red</button>
+		</div>
+		<div>Your last rolls: <p id="playerLastRedRoll">0</p> <p id="playerLastBlackRoll">0</p></div>
+	</div>
+	<div id="eventLog">Log of Events:</div>
 </body>
 </html>

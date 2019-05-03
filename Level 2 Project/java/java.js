@@ -43,16 +43,20 @@ function computerTurn()
 	// }
 	computerLastRedRollOutput.innerHTML = redDiceValue;
 	computerLastBlackRollOutput.innerHTML = blackDiceValue;
+	currentTurn = "player";
+	for (var i = 0; i < htmlButtonsArray.length; i++) {
+		htmlButtonsArray[i].disabled = false;
+	}
 }
 function endPlayerTurn()
 {
-	// for (var i = 0; i < htmlButtonsArray.length; i++) {
-	// 	htmlButtonsArray[i].disabled = true;
-	// }
+	for (var i = 0; i < htmlButtonsArray.length; i++) {
+		htmlButtonsArray[i].disabled = true;
+	}
 	playerLastRedRollOutput.innerHTML = redDiceValue;
 	playerLastBlackRollOutput.innerHTML = blackDiceValue;
 	currentTurn = "computer";
-	computerTurn();
+	setTimeout(computerTurn, 1000);
 }
 function getRandomInteger(lower, upper)
 {
@@ -85,7 +89,9 @@ function changeTokens(functionNumber)
 	if (amountPlayerBlackTokens <= 0 || amountComputerBlackTokens <= 0) {
 		checkWinner();
 	}
-	endPlayerTurn();
+	if (currentTurn = "player") {
+		endPlayerTurn();
+	}
 }
 function checkWinner()
 {
@@ -99,17 +105,6 @@ function concatenateEventLog(playerPile, playerColor, computerPile, computerColo
 {
 	currentEventLog = "<br>" + redDiceValue + " tokens " + playerPile + " your " + playerColor + " pile and " + blackDiceValue + " tokens " + computerPile + " the computer's " + computerColor + " pile.";
 	display();
-}
-function reset()
-{
-	redDieFaceOutput.src = "images/red-0.png";
-	blackDieFaceOutput.src = "images/black-0.png";
-	redDiceValue = 0;
-	blackDiceValue = 0;
-	eventLogOutput.innerHTML = "";
-	computerTokenOutput.innerHTML = "";
-	playerTokenOutput.innerHTML = "";
-	eventLogOutput.innerHTML = "";
 }
 function display()
 {

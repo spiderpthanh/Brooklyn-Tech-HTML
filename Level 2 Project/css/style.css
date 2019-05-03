@@ -1,9 +1,18 @@
 body{
 	background-color: black;
 	color: white;
+	text-align: center;
 }
 p{
 	display: inline;
+}
+h1{
+	text-align: center;
+}
+div{
+	padding: 20px;
+	margin: 20px;
+	border-radius: 10px;
 }
 #playerContainer{
 	border: 2px solid white;
