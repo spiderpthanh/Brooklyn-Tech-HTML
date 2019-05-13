@@ -16,7 +16,11 @@
         rollFourOutput = document.getElementById("rollFour");
         rollFiveOutput = document.getElementById("rollFive");
         rollSixOutput = document.getElementById("rollSix");
-        allRolls = [0, 0, 0, 0, 0, 0,];
+        meanOutput = document.getElementById("mean");
+        medianOutput = document.getElementById("median");
+        modeOutput = document.getElementById("mode");
+        rollAmounts = [0, 0, 0, 0, 0, 0,];
+        allRolls = [];
         total = 0;
       }
       function rollDice()
@@ -30,46 +34,74 @@
           newCell.innerHTML = "Roll " + (i + 1);
           newCell = newRow.insertCell();
           newCell.innerHTML = dieRoll;
+          allRolls.push(dieRoll);
           logRolls(dieRoll);
           total += dieRoll;
           }
-          rollAmountSelectorOutout.style.visibility = "hidden";
-          diceTable.style.visibility = "visible";
-          rollTable.style.visibility = "visible";
+          rollAmountSelectorOutout.style.display = "none";
+          diceTable.style.display = "table";
+          rollTable.style.display = "table";
+          logMeanMedianMode();
         }
       }
       function logRolls(roll)
       {
-        allRolls[roll - 1] += 1;
-        rollOneOutput.innerHTML = allRolls[0];
-        rollTwoOutput.innerHTML = allRolls[1];
-        rollThreeOutput.innerHTML = allRolls[2];
-        rollFourOutput.innerHTML = allRolls[3];
-        rollFiveOutput.innerHTML = allRolls[4];
-        rollSixOutput.innerHTML = allRolls[5];
+        rollAmounts[roll - 1] += 1;
+        rollOneOutput.innerHTML = rollAmounts[0];
+        rollTwoOutput.innerHTML = rollAmounts[1];
+        rollThreeOutput.innerHTML = rollAmounts[2];
+        rollFourOutput.innerHTML = rollAmounts[3];
+        rollFiveOutput.innerHTML = rollAmounts[4];
+        rollSixOutput.innerHTML = rollAmounts[5];
       }
-      function getSum(total, num) 
+      function logMeanMedianMode()
       {
-        return total + num;
+        meanOutput.innerHTML = calculateMean();
+        medianOutput.innerHTML = calculateMedian();
       }
-      function myFunction(item) 
+      // function getSum(total, num) 
+      // {
+      //   return total + num;
+      // }
+      // function myFunction(item) 
+      // {
+      //   meanOutput.innerHTML = rollAmounts.reduce(getSum);
+      // }
+      function calculateMean()
       {
-        medianOutput.innerHTML = allRolls.reduce(getSum);
+        var average = total / rollAmountBoxOutput.value;
+        return average;
       }
-      function logMean()
+      function calculateMedian()
       {
-        // FINISH THIS
+        allRolls.sort();
+        if (allRolls.length % 2 == 1) {
+          var median = allRolls[Math.round(allRolls.length / 2) - 1];
+          return median;
+        } else {
+          var median = (allRolls[allRolls.length / 2 - 1] + allRolls[allRolls.length / 2 + 1]) / 2;
+          return median;
+        }
+      }
+      function calculateMode()
+      {
+        
       }
 		</script>
 		<style>
+      body{
+        background-color: black;
+        color: white;
+      }
       table{
         border: thick solid grey;
         border-collapse: collapse;
         width: 25%;
         margin: 10px;
+        
       }
       th, td{
-        border: thin solid black;
+        border: thin solid white;
         padding: 8px;
         width: 50%;
       }
@@ -84,13 +116,13 @@
 		</style>
 	</head>
 	<body onload="initialize();">
-    <table id="diceTable" style="visibility: hidden;">
+    <table id="diceTable" style="display: none;">
       <tr>
         <th>Roll</th>
         <th>Result</th>
       </tr>
 		</table>
-    <table id="rollTable" style="visibility: hidden;">
+    <table id="rollTable" style="display: none;">
       <tr>
         <th>Number</th>
         <th>Amount Rolled</th>
@@ -125,5 +157,8 @@
       <input style="width: 50%;" type="number" id="rollAmountBox">
       <button style="margin-top: 15px;" onclick="rollDice();">Submit</button>
     </div>
+    <h1 id="mean">Mean</h1>
+    <h1 id="median">Median</h1>
+    <h1 id="mode">Mode</h1>
 	</body>
 </html>
