@@ -9,7 +9,7 @@
         diceTableOutput = document.getElementById("diceTable");
         rollTableOutput = document.getElementById("rollTable");
         rollAmountBoxOutput = document.getElementById("rollAmountBox");
-        rollAmountSelectorOutout = document.getElementById("rollAmountSelector");
+        rollAmountSelectorOutput = document.getElementById("rollAmountSelector");
         rollOneOutput = document.getElementById("rollOne");
         rollTwoOutput = document.getElementById("rollTwo");
         rollThreeOutput = document.getElementById("rollThree");
@@ -19,7 +19,8 @@
         meanOutput = document.getElementById("mean");
         medianOutput = document.getElementById("median");
         modeOutput = document.getElementById("mode");
-        rollAmounts = [0, 0, 0, 0, 0, 0,];
+        meanMedianModeTableOutput = document.getElementById("meanMedianModeTable");
+        rollAmounts = [0, 0, 0, 0, 0, 0];
         allRolls = [];
         total = 0;
       }
@@ -38,7 +39,7 @@
           logRolls(dieRoll);
           total += dieRoll;
           }
-          rollAmountSelectorOutout.style.display = "none";
+          rollAmountSelectorOutput.style.display = "none";
           diceTable.style.display = "table";
           rollTable.style.display = "table";
           logMeanMedianMode();
@@ -58,19 +59,13 @@
       {
         meanOutput.innerHTML = calculateMean();
         medianOutput.innerHTML = calculateMedian();
+        modeOutput.innerHTML = calculateMode();
+        meanMedianModeTableOutput.style.display = "table";
       }
-      // function getSum(total, num) 
-      // {
-      //   return total + num;
-      // }
-      // function myFunction(item) 
-      // {
-      //   meanOutput.innerHTML = rollAmounts.reduce(getSum);
-      // }
       function calculateMean()
       {
-        var average = total / rollAmountBoxOutput.value;
-        return average;
+        var mean = total / rollAmountBoxOutput.value;
+        return mean;
       }
       function calculateMedian()
       {
@@ -79,13 +74,20 @@
           var median = allRolls[Math.round(allRolls.length / 2) - 1];
           return median;
         } else {
-          var median = (allRolls[allRolls.length / 2 - 1] + allRolls[allRolls.length / 2 + 1]) / 2;
+          var median = (allRolls[allRolls.length / 2 - 1] + allRolls[allRolls.length / 2]) / 2;
           return median;
         }
       }
       function calculateMode()
       {
-        
+        var maxRolled = Math.max(...rollAmounts);
+        var indexArray = [];
+        for (var i = 0; i < rollAmounts.length; i++) {
+          if (rollAmounts[i] == maxRolled) {
+            indexArray.push(i + 1);
+          }
+        }
+        return indexArray;
       }
 		</script>
 		<style>
@@ -152,13 +154,22 @@
         <th id="rollSix">0</th>
       </tr>
     </table>
+    <table id="meanMedianModeTable" style="display: none;">
+      <tr>
+        <th>Mean</th>
+        <th>Median</th>
+        <th>Mode</th>
+      </tr>
+      <tr>
+        <th id="mean">Mean</th>
+        <th id="median">Median</th>
+        <th id="mode">Mode</th>
+      </tr>
+    </table>
     <div id="rollAmountSelector">
       <h1>Pick a number</h1>
       <input style="width: 50%;" type="number" id="rollAmountBox">
       <button style="margin-top: 15px;" onclick="rollDice();">Submit</button>
     </div>
-    <h1 id="mean">Mean</h1>
-    <h1 id="median">Median</h1>
-    <h1 id="mode">Mode</h1>
 	</body>
 </html>
