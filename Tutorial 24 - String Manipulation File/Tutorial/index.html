@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>String Manipulation</title>
+	<style>
+		div{
+			border: thick double black;
+		}
+	</style>
+	<script>
+		function initialize()
+		{
+			logOutputBox = document.getElementById("logoutput");
+			logInputBox = document.getElementById("loginput");
+			log = "Log -- ";
+		}
+		function addMessage(msg)
+		{
+			// if (isValid(msg)) {
+			// 	log += "<br>" + msg;	
+			// } else {
+			// 	log += "<br>Invalid Message Entered!";
+			// 	display();
+			// }
+			log += "<br>" + validate(msg);
+			display();
+		}
+		function validate(msg)
+		{
+			var invalidChars = "<>@#*";
+			for (var i = 0; i < invalidChars.length; i++) {
+				var charIdx = msg.indexOf(invalidChars.charAt(i));
+				while (charIdx >= 0) {
+					msg = msg.substring(0, charIdx) + msg.substring(charIdx + 1);
+					charIdx = msg.indexOf(invalidChars.charAt(i));
+				}
+			}
+			return msg;
+		}
+		function isValid(msg)
+		{
+			var invalidChars = "<>@#*";
+			for (var i = 0; i < invalidChars.length; i++) {
+				if (msg.indexOf(invalidChars.charAt(i)) >= 0) {
+					return false;
+				}
+				return true;
+			}
+		}
+		function display()
+		{
+			logOutputBox.innerHTML = log;
+		}
+	</script>
+</head>
+<body onload="initialize();">
+	<h2>Daily Log</h2>
+	<button onclick="addMessage(logInputBox.value);">Add to Log</button>
+	<input id="loginput" type="text">
+	<hr>
+	<div id="logoutput">Log --</div>
+</body>
+</html>
