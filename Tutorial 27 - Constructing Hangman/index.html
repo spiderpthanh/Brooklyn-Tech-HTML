@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hangman</title>
+	<script>
+		function initialize()
+		{
+			GALLOWS_IMAGES = ["gallows1.png", "gallows2.png", "gallows3.png", "gallows4.png", "gallows5.png", "gallows6.png", "gallows7.png"];
+				CODE_A = ("A").charCodeAt(0);
+				CODE_Z = ("Z").charCodeAt(0);
+
+			solutionBox = document.getElementById("solbox");
+			gallowsImage = document.getElementById("galimg");
+
+			hangmanPuzzle = "Luigi's Mansion";
+			gallowsIdx = 0;
+
+			playerSolution = [];
+			for (var i = 0; i < hangmanPuzzle.length; i++) {
+				var upChar = hangmanPuzzle.toUpperCase().charCodeAt(i);
+				if (upChar >= CODE_A && upChar <= CODE_Z)
+					playerSolution.push("-");
+				else
+						playerSolution.push(hangmanPuzzle.charAt(i));
+			}
+			display();
+		}
+		function display()
+		{
+			gallowsImage.src = "images/" + GALLOWS_IMAGES[gallowsIdx];
+			solutionBox.innerHTML = "";
+			for (var i = 0; i < playerSolution.length; i++) {
+				solutionBox.innerHTML += playerSolution[i];
+			}
+		}
+		function makeGuess(letter)
+		{
+			var foundLetter = false;
+			var upperString = hangmanPuzzle.toUpperCase();
+			for (var i = 0; i < upperString.length; i++) {
+				if (upperString.charAt(i) == letter) {
+					playerSolution[i] = hangmanPuzzle.charAt(i);
+					foundLetter = true;
+				}
+			}
+		}
+	</script>
+</head>
+<body onload="initialize();">
+	<h1><span>HANGMAN</span></h1>
+	<div>
+		<table>
+			<tr>
+				<td><button onclick = "makeGuess('A')">A</button></td>
+				<td><button onclick = "makeGuess('B')">B</button></td>
+				<td><button onclick = "makeGuess('C')">C</button></td>
+				<td><button onclick = "makeGuess('D')">D</button></td>
+			</tr>
+			<tr>
+				<td><button onclick = "makeGuess('E')">E</button></td>
+				<td><button onclick = "makeGuess('F')">F</button></td>
+				<td><button onclick = "makeGuess('G')">G</button></td>
+				<td><button onclick = "makeGuess('H')">H</button></td>
+			</tr>
+			<tr>
+				<td><button onclick = "makeGuess('I')">I</button></td>
+				<td><button onclick = "makeGuess('J')">J</button></td>
+				<td><button onclick = "makeGuess('K')">K</button></td>
+				<td><button onclick = "makeGuess('L')">L</button></td>
+			</tr>
+			<tr>
+				<td><button onclick = "makeGuess('M')">M</button></td>
+				<td><button onclick = "makeGuess('N')">N</button></td>
+				<td><button onclick = "makeGuess('O')">O</button></td>
+				<td><button onclick = "makeGuess('P')">P</button></td>
+			</tr>
+			<tr>
+				<td><button onclick = "makeGuess('Q')">Q</button></td>
+				<td><button onclick = "makeGuess('R')">R</button></td>
+				<td><button onclick = "makeGuess('S')">S</button></td>
+				<td><button onclick = "makeGuess('T')">T</button></td>
+			</tr>
+			<tr>
+				<td><button onclick = "makeGuess('U')">U</button></td>
+				<td><button onclick = "makeGuess('V')">V</button></td>
+				<td><button onclick = "makeGuess('W')">W</button></td>
+				<td><button onclick = "makeGuess('X')">X</button></td>
+			</tr>
+			<tr>
+				<td><button onclick = "makeGuess('Y')">Y</button></td>
+				<td><button onclick = "makeGuess('Z')">Z</button></td>
+				<td></td>
+			</tr>
+		</table>
+		<hr>
+	</div>
+	<div>
+		<img id="galimg" src="images/gallows1.png">
+		<div id="solbox"></div>
+	</div>
+</body>
+</html>
